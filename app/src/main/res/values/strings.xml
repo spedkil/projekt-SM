@@ -2,4 +2,5 @@
     <string name="app_name">projekt-SM</string>
     <string name ="notify_text">Check out our different functions!</string>
     <string name="notify_title">Click me!</string>
+    <string name="classification_failed">Classification Failed!</string>
 </resources>

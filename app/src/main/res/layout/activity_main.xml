@@ -2,53 +2,56 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="227dp"
+        android:layout_height="58dp"
         android:layout_marginTop="16dp"
-        android:text="Goto image Classification"
         android:onClick="onGotoImageActivity"
+        android:text="Goto image Classification"
+        app:icon="@drawable/ic_baseline_image_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Goto flower Classification"
+        android:layout_width="227dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="96dp"
         android:onClick="onGotoFlowerClassification"
+        android:text="Goto flower Classification"
+        app:icon="@drawable/ic_baseline_local_florist_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"  />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Goto Object Detection"
+        android:layout_width="227dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="92dp"
         android:onClick="onGotoObjectDetection"
+        android:text="Goto Object Detection"
+        app:icon="@drawable/ic_baseline_drafts_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"  />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/notify_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="208dp"
+        android:layout_width="227dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="248dp"
         android:text="Get Notify"
+        app:icon="@drawable/ic_notify"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

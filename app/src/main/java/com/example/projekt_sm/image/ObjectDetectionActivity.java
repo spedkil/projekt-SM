@@ -6,6 +6,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.projekt_sm.R;
 import com.example.projekt_sm.helpers.BoxWithLabel;
 import com.example.projekt_sm.helpers.ImageHelperActivity;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -61,7 +62,7 @@ public class ObjectDetectionActivity extends ImageHelperActivity {
 
                             drawDetectionResult(boxes, bitmap);
                         }else{
-                            getOutputTextView().setText("could not detect");
+                            getOutputTextView().setText(getText(R.string.classification_failed));
                         }
                     }
                 })

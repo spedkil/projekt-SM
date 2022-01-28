@@ -25,6 +25,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.projekt_sm.MainActivity;
 import com.example.projekt_sm.R;
 
 import java.io.File;
@@ -55,6 +56,7 @@ public class ImageHelperActivity extends AppCompatActivity {
 
 
                 requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 0);
+                requestPermissions(new String[]{Manifest.permission.CAMERA},1001 );
 
         }
 
@@ -62,6 +64,11 @@ public class ImageHelperActivity extends AppCompatActivity {
     }
 
 
+
+    public void onBack(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
     public void onPickImage(View view){
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);

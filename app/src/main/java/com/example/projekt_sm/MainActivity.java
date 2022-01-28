@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Button notifyBtn;
         createNotificationChannel();
         notifyBtn = findViewById(R.id.notify_button);
+        notifyBtn.setText("NOTIFY");
         Intent intent = new Intent(this, MainActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addNextIntentWithParentStack(intent);
@@ -64,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
             manager.createNotificationChannel(channel);
         }
     }
+
+
+
     public void onGotoImageActivity(View view){
         Intent intent = new Intent(this, ImageClassificationActivity.class);
         startActivity(intent);
@@ -77,4 +81,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ObjectDetectionActivity.class);
         startActivity(intent);
     }
+
 }

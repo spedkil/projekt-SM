@@ -25,25 +25,38 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Back"
+            android:onClick="onBack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/buttonStartCamera" />
+
+        <Button
             android:id="@+id/buttonPickImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pick Image"
+            android:layout_marginStart="8dp"
             android:onClick="onPickImage"
-            app:layout_constraintEnd_toStartOf="@+id/buttonStartCamera"
-            app:layout_constraintHorizontal_bias="0.5"
+            android:text="Pick Image"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <Button
             android:id="@+id/buttonStartCamera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start Camera"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:onClick="onStartCamera"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            android:text="Start Camera"
+            app:layout_constraintEnd_toStartOf="@+id/button4"
             app:layout_constraintStart_toEndOf="@+id/buttonPickImage"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
+import com.example.projekt_sm.R;
 import com.example.projekt_sm.helpers.ImageHelperActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -48,7 +49,7 @@ public class FlowerClassificationActivity extends ImageHelperActivity {
                     }
                     getOutputTextView().setText(builder.toString());
                 }else{
-                    getOutputTextView().setText("klasyfikacja nie udana");
+                    getOutputTextView().setText(getText(R.string.classification_failed));
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
