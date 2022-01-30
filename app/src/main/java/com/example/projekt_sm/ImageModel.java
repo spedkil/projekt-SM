@@ -2,14 +2,13 @@ package com.example.projekt_sm;
 
 public class ImageModel {
     private int id;
-    private String originalUrl, mediumUrl;
+    private String mediumUrl;
 
     public ImageModel() {
     }
 
-    public ImageModel(int id, String originalUrl, String mediumUrl) {
+    public ImageModel(int id, String mediumUrl) {
         this.id = id;
-        this.originalUrl = originalUrl;
         this.mediumUrl = mediumUrl;
     }
 
@@ -21,13 +20,6 @@ public class ImageModel {
         this.id = id;
     }
 
-    public String getOriginalUrl() {
-        return originalUrl;
-    }
-
-    public void setOriginalUrl(String originalUrl) {
-        this.originalUrl = originalUrl;
-    }
 
     public String getMediumUrl() {
         return mediumUrl;

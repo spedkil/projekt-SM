@@ -38,7 +38,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageViewHolder>{
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, FullscreenImage.class).putExtra("originalUrl", imageModelList.get(position).getOriginalUrl()));
+                context.startActivity(new Intent(context, FullscreenImage.class).putExtra("mediumUrl", imageModelList.get(position).getMediumUrl()));
             }
         });
     }

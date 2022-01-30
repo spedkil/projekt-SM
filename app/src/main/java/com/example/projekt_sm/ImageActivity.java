@@ -88,10 +88,9 @@ public class ImageActivity extends AppCompatActivity {
                         JSONObject object = jsonArray.getJSONObject(i);
                         int id = object.getInt("id");
                         JSONObject objectImages = object.getJSONObject("src");
-                        String originalUrl = objectImages.getString("original");
                         String mediumUrl = objectImages.getString("medium");
 
-                        ImageModel imageModel = new ImageModel(id, originalUrl, mediumUrl);
+                        ImageModel imageModel = new ImageModel(id, mediumUrl);
                         imageModelList.add(imageModel);
                     }
                     imageAdapter.notifyDataSetChanged();

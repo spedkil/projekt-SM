@@ -16,7 +16,7 @@ import com.bumptech.glide.Glide;
 
 public class FullscreenImage extends AppCompatActivity {
 
-    String originalUrl = "";
+    String mediumUrl = "";
     ImageView imageView;
 
     @Override
@@ -28,9 +28,9 @@ public class FullscreenImage extends AppCompatActivity {
         getSupportActionBar().hide();
 
         Intent intent = getIntent();
-        originalUrl = intent.getStringExtra("originalUrl");
+        mediumUrl = intent.getStringExtra("mediumUrl");
         imageView = findViewById(R.id.image_view);
-        Glide.with(this).load(originalUrl).into(imageView);
+        Glide.with(this).load(mediumUrl).into(imageView);
 
         Button download_btn;
         download_btn = findViewById(R.id.btnDownload);
@@ -39,7 +39,7 @@ public class FullscreenImage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DownloadManager downloadManager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
-                Uri uri = Uri.parse(originalUrl);
+                Uri uri = Uri.parse(mediumUrl);
                 DownloadManager.Request request = new DownloadManager.Request(uri);
                 request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                 downloadManager.enqueue(request);
