@@ -81,5 +81,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ObjectDetectionActivity.class);
         startActivity(intent);
     }
-
+    public void onGoToImageDownload(View view){
+        Intent intent = new Intent(this, ImageActivity.class);
+        startActivity(intent);
+    }
 }

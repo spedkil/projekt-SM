@@ -55,4 +55,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/download_button"
+        android:layout_width="227dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="324dp"
+        android:text="Download Photos"
+        android:onClick="onGoToImageDownload"
+        app:icon="@drawable/ic_baseline_image_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
