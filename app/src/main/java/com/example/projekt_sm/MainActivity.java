@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         Button notifyBtn;
         createNotificationChannel();
         notifyBtn = findViewById(R.id.notify_button);
-        notifyBtn.setText("NOTIFY");
         Intent intent = new Intent(this, MainActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addNextIntentWithParentStack(intent);
