@@ -33,34 +33,7 @@ public class MainActivity extends AppCompatActivity {
         Button notifyBtn;
 
         createNotificationChannel();
-        notifyBtn = findViewById(R.id.notify_button);
         getDataBtn = findViewById(R.id.getDataButton);
-        Intent intent = new Intent(this, MainActivity.class);
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-        stackBuilder.addNextIntentWithParentStack(intent);
-        PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-
-
-
-
-
-        notifyBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //notification code
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "Notification");
-                builder.setContentTitle(getString((R.string.notify_title)));
-                builder.setContentText(getString(R.string.notify_text));
-                builder.setSmallIcon(R.drawable.ic_notify);
-                builder.setPriority(NotificationCompat.PRIORITY_HIGH);
-                builder.setContentIntent(pendingIntent);
-                builder.setAutoCancel(true);
-
-                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
-                managerCompat.notify(1, builder.build());
-            }
-        });
-
 
             getDataBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -82,7 +55,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Intent intent = new Intent(this, MainActivity.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addNextIntentWithParentStack(intent);
+        PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
 
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "Notification");
+        builder.setContentTitle(getString((R.string.notify_title)));
+        builder.setContentText(getString(R.string.notify_text));
+        builder.setSmallIcon(R.drawable.ic_notify);
+        builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+        builder.setContentIntent(pendingIntent);
+        builder.setAutoCancel(true);
+
+        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
+        managerCompat.notify(1, builder.build());
+    }
 
     public void showMessage(String title, String message){
         AlertDialog.Builder  builder = new AlertDialog.Builder(this);

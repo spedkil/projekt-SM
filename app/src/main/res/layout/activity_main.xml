@@ -45,23 +45,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/notify_button"
-        android:layout_width="227dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="248dp"
-        android:text="Get Notify"
-        app:icon="@drawable/ic_notify"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/download_button"
         android:layout_width="227dp"
         android:layout_height="58dp"
-        android:layout_marginTop="324dp"
-        android:text="Download Photos"
+        android:layout_marginTop="252dp"
         android:onClick="onGoToImageDownload"
+        android:text="Download Photos"
         app:icon="@drawable/ic_baseline_image_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +60,7 @@
         android:id="@+id/getDataButton"
         android:layout_width="227dp"
         android:layout_height="58dp"
+        android:layout_marginTop="336dp"
         android:text="Show DB data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
