@@ -42,13 +42,13 @@ public class ImageHelperActivity extends AppCompatActivity {
     private ImageView inputImageView;
     private TextView outputTextView;
     private File photoFile;
-
+    protected DatabaseHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_helper);
 
-
+        db = new DatabaseHelper(this);
         inputImageView = findViewById(R.id.imageViewInput);
         outputTextView = findViewById(R.id.textViewOutput);
 
@@ -109,13 +109,14 @@ public class ImageHelperActivity extends AppCompatActivity {
                 Uri uri = data.getData();
                 Bitmap bitmap = loadFromUri(uri);
                 inputImageView.setImageBitmap(bitmap);
-                runClassification(bitmap);
-
+                String name = uri.getPath();
+                runClassification(bitmap,name);
             }else if( requestCode == REQUEST_CAPTURE_IMAGE){
                 Log.d("ML", "received callback from camera");
                 Bitmap bitmap = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
                 inputImageView.setImageBitmap(bitmap);
-                runClassification(bitmap);
+                String path = photoFile.getName();
+                runClassification(bitmap,path);
             }
         }
     }
@@ -137,7 +138,7 @@ public class ImageHelperActivity extends AppCompatActivity {
         return bitmap;
     }
 
-    protected void runClassification(Bitmap bitmap){
+    protected void runClassification(Bitmap bitmap, String file_name){
 
     }
 

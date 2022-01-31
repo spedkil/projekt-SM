@@ -28,7 +28,7 @@ public class ImageClassificationActivity extends ImageHelperActivity {
     }
 
     @Override
-    protected void runClassification(Bitmap bitmap) {
+    protected void runClassification(Bitmap bitmap,String file_name) {
         InputImage inputImage = InputImage.fromBitmap(bitmap,0);
         imageLabeler.process(inputImage).addOnSuccessListener(new OnSuccessListener<List<ImageLabel>>() {
             @Override
@@ -41,6 +41,7 @@ public class ImageClassificationActivity extends ImageHelperActivity {
                                 .append(label.getConfidence())
                                 .append("\n");
                     }
+                    db.insertData(file_name,builder.toString());
                     getOutputTextView().setText(builder.toString());
                 }else{
                     getOutputTextView().setText(getText(R.string.classification_failed));

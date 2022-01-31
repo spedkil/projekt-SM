@@ -1,39 +1,45 @@
 package com.example.projekt_sm;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-
+import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.projekt_sm.helpers.ImageHelperActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
+import com.example.projekt_sm.helpers.DatabaseHelper;
 import com.example.projekt_sm.image.FlowerClassificationActivity;
 import com.example.projekt_sm.image.ImageClassificationActivity;
 import com.example.projekt_sm.image.ObjectDetectionActivity;
-import com.google.mlkit.vision.objects.ObjectDetection;
-
 public class MainActivity extends AppCompatActivity {
-
+    Button getDataBtn;
+    DatabaseHelper mdb;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mdb = new DatabaseHelper(this);
         Button notifyBtn;
+
         createNotificationChannel();
         notifyBtn = findViewById(R.id.notify_button);
+        getDataBtn = findViewById(R.id.getDataButton);
         Intent intent = new Intent(this, MainActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addNextIntentWithParentStack(intent);
         PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+
 
 
 
@@ -55,6 +61,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+            getDataBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Cursor res = mdb.getAllData();
+                    if (res.getCount() == 0){
+                        showMessage("ERROR", "NO DATA FOUND");
+                        return;
+                    }
+                    StringBuffer buffer = new StringBuffer();
+                    while (res.moveToNext()){
+                        buffer.append("ID : " + res.getString(0) + " FILE PATH : " + res.getString(1) + "\n");
+                        buffer.append(" RESULTS : "  + res.getString(2) + "\n\n");
+                    }
+                    showMessage("DATA",buffer.toString());
+                }
+            });
+
+
+    }
+
+
+
+    public void showMessage(String title, String message){
+        AlertDialog.Builder  builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
     }
 
     public void createNotificationChannel(){
@@ -84,4 +119,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ImageActivity.class);
         startActivity(intent);
     }
+
 }

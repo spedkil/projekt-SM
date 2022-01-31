@@ -38,7 +38,7 @@ public class ObjectDetectionActivity extends ImageHelperActivity {
 
 
     @Override
-    protected void runClassification(Bitmap bitmap) {
+    protected void runClassification(Bitmap bitmap,String file_name) {
         InputImage inputImage = InputImage.fromBitmap(bitmap ,0);
         objectDetector.process(inputImage)
                 .addOnSuccessListener(new OnSuccessListener<List<DetectedObject>>() {
@@ -61,6 +61,7 @@ public class ObjectDetectionActivity extends ImageHelperActivity {
                             getOutputTextView().setText(builder.toString());
 
                             drawDetectionResult(boxes, bitmap);
+                            db.insertData(file_name,builder.toString());
                         }else{
                             getOutputTextView().setText(getText(R.string.classification_failed));
                         }
