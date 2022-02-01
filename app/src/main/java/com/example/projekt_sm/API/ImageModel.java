@@ -1,4 +1,4 @@
-package com.example.projekt_sm;
+package com.example.projekt_sm.API;
 
 public class ImageModel {
     private int id;

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">projekt-SM</string>
+    <string name="notify_text">Zobacz nasze inne funkcje!</string>
+    <string name="notify_title">Kliknij mnie!</string>
+    <string name="classification_failed">Klasyfikacja Nieudana!</string>
+    <string name="dwn_btn">pobierz zdjęcie</string>
+    <string name="db_data">Wyświetl Bazę Danych</string>
+    <string name="object_det">Przejdź Do Detekcji Obiektów</string>
+    <string name="flower_det">Przejdź Do Detekcji Kwiatów</string>
+    <string name="image_class">Przejdź Do Klasyfikacji Obrazu</string>
+    <string name="back">Powrót</string>
+    <string name="pick_img">Wybierz Zdjęcie</string>
+    <string name="camera_start">Zrób zdjęcie</string>
+    <string name="output">Wynik</string>
+    <string name="search">Wyszukaj</string>
+</resources>

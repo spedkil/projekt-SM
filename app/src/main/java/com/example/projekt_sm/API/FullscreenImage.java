@@ -1,6 +1,4 @@
-package com.example.projekt_sm;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.projekt_sm.API;
 
 import android.app.DownloadManager;
 import android.content.Context;
@@ -12,7 +10,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
+import com.example.projekt_sm.R;
 
 public class FullscreenImage extends AppCompatActivity {
 

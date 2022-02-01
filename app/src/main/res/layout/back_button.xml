@@ -3,6 +3,6 @@
     android:id="@+id/button4"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Back"
+    android:text="@string/back"
     android:onClick="onBack">
 </Button>

@@ -10,11 +10,10 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="227dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="onGotoImageActivity"
-        android:text="Goto image Classification"
+        android:text="@string/image_class"
         app:icon="@drawable/ic_baseline_image_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,48 +21,44 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="227dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="96dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="onGotoFlowerClassification"
-        android:text="Goto flower Classification"
+        android:text="@string/flower_det"
         app:icon="@drawable/ic_baseline_local_florist_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onGotoObjectDetection"
+        android:text="@string/object_det"
+        app:icon="@drawable/ic_baseline_drafts_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="227dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="92dp"
-        android:onClick="onGotoObjectDetection"
-        android:text="Goto Object Detection"
-        app:icon="@drawable/ic_baseline_drafts_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/download_button"
-        android:layout_width="227dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="252dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="onGoToImageDownload"
-        android:text="Download Photos"
+        android:text="@string/dwn_btn"
         app:icon="@drawable/ic_baseline_image_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
         android:id="@+id/getDataButton"
-        android:layout_width="227dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="336dp"
-        android:text="Show DB data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/db_data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/download_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

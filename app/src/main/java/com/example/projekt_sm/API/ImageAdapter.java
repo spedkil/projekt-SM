@@ -1,4 +1,4 @@
-package com.example.projekt_sm;
+package com.example.projekt_sm.API;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.projekt_sm.R;
 
 import java.util.List;
 

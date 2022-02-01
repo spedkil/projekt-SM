@@ -1,13 +1,8 @@
 package com.example.projekt_sm.helpers;
 
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.FileProvider;
-
 import android.Manifest;
 import android.content.Intent;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -25,6 +20,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
+
 import com.example.projekt_sm.MainActivity;
 import com.example.projekt_sm.R;
 
@@ -38,11 +38,21 @@ public class ImageHelperActivity extends AppCompatActivity {
 
     private int REQUEST_PICK_IMAGE = 1000;
     private int REQUEST_CAPTURE_IMAGE = 1001;
-
+    private Bitmap bitmap;
     private ImageView inputImageView;
     private TextView outputTextView;
     private File photoFile;
     protected DatabaseHelper db;
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("output",outputTextView.toString());
+        outState.putParcelable("bitmap",bitmap);
+
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +61,11 @@ public class ImageHelperActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
         inputImageView = findViewById(R.id.imageViewInput);
         outputTextView = findViewById(R.id.textViewOutput);
+
+        if (savedInstanceState != null){
+//            outputTextView.setText(savedInstanceState.getString("output"));
+            inputImageView.setImageBitmap(savedInstanceState.getParcelable("bitmap"));
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) {
 
@@ -107,13 +122,13 @@ public class ImageHelperActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK){
             if (requestCode == REQUEST_PICK_IMAGE){
                 Uri uri = data.getData();
-                Bitmap bitmap = loadFromUri(uri);
+                bitmap = loadFromUri(uri);
                 inputImageView.setImageBitmap(bitmap);
                 String name = uri.getPath();
                 runClassification(bitmap,name);
             }else if( requestCode == REQUEST_CAPTURE_IMAGE){
                 Log.d("ML", "received callback from camera");
-                Bitmap bitmap = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
+                bitmap = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
                 inputImageView.setImageBitmap(bitmap);
                 String path = photoFile.getName();
                 runClassification(bitmap,path);

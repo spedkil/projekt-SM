@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.example.projekt_sm.API.ImageActivity;
 import com.example.projekt_sm.helpers.DatabaseHelper;
 import com.example.projekt_sm.image.FlowerClassificationActivity;
 import com.example.projekt_sm.image.ImageClassificationActivity;

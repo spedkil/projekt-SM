@@ -1,6 +1,16 @@
 <resources>
-    <string name="app_name">projekt-SM</string>
+    <string name="app_name" translatable="false">projekt-SM</string>
     <string name="notify_text">Check out our different functions!</string>
     <string name="notify_title">Click me!</string>
     <string name="classification_failed">Classification Failed!</string>
+    <string name="dwn_btn">Download Photos</string>
+    <string name="db_data">Show DB data</string>
+    <string name="object_det">Goto Object Detection</string>
+    <string name="flower_det">Goto Flower Detection</string>
+    <string name="image_class">Goto Image classification</string>
+    <string name="back">Back</string>
+    <string name="pick_img">Pick Image</string>
+    <string name="camera_start">Start Camera</string>
+    <string name="output">Output</string>
+    <string name="search">Search</string>
 </resources>
